@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>STRETCH</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Kalam:wght@400;700&family=Instrument+Sans:wght@400;500;600&display=swap">
+<style>
+/* Læg noot-aj.woff ved siden af HTML-filen for at aktivere logo-fonten. */
+@font-face {
+  font-family: 'Noot';
+  src: url('fonts/noot-aj.woff') format('woff');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root{
+  --bg:#FFF3DF;--ink:#291719;--blue:#761827;--sky:#F1D6CD;--line:#C9928C;--paper:#FFF9EE;--door:#E6B9AE;--butter:#F1C453;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);height:100%}
+*{box-sizing:border-box}
+body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font-family:'Instrument Sans',system-ui,sans-serif;line-height:1.55}
+a{color:var(--ink)}
+a:focus-visible{outline:3px solid var(--line);outline-offset:3px}
+.serif{font-family:'Bricolage Grotesque','Arial Black',sans-serif;font-weight:700;letter-spacing:-0.025em}
+.top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding:24px 32px}
+.top .name{font-size:36px;font-weight:800;letter-spacing:-.045em;text-transform:uppercase}
+.pill{border:2px solid var(--blue);color:var(--blue);border-radius:999px;padding:8px 20px;text-decoration:none;font-weight:700;transition:background .2s ease,color .2s ease,transform .2s ease}.pill:hover{background:var(--blue);color:#FFF9EE;transform:translateY(-1px)}
+.hero{text-align:center;padding:8px 24px 56px}
+.hero svg{width:100%;max-width:720px;height:auto;display:block;margin:0 auto;animation:heroIn .7s cubic-bezier(.2,.8,.2,1) both}
+h1{font-size:52px;line-height:1.02;margin:32px auto 14px;max-width:660px;letter-spacing:-.045em}.hero-kicker{display:block;color:var(--blue);font-size:.42em;letter-spacing:.04em;text-transform:uppercase;margin-top:10px}
+.lead{max-width:none;margin:0 auto 28px;font-size:18px;white-space:nowrap}
+.btn{display:inline-block;background:var(--blue);color:#FFF9EE;padding:14px 30px;border-radius:999px;text-decoration:none;font-weight:700;font-size:18px;transition:transform .18s ease,filter .18s ease,box-shadow .18s ease}
+.btn:hover{color:#FFF9EE;filter:brightness(.96);transform:translateY(-1px);box-shadow:0 3px 10px rgba(41,23,25,.08)}
+.wrap{max-width:720px;margin:0 auto;padding:16px 24px 40px}
+h2{font-size:32px;margin:0 0 16px}
+.item{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:2px dotted var(--line)}
+.item .t{font-size:23px;font-weight:800;letter-spacing:-.035em}.item>div:first-child>div:last-child{font-size:15px;opacity:.72;margin-top:2px}
+.item .p{font-weight:800;white-space:nowrap;align-self:flex-start;background:transparent;color:var(--blue);border:2px solid var(--blue);border-radius:10px;padding:3px 12px;transition:background .18s ease,color .18s ease,transform .18s ease}.item:hover .p{background:var(--blue);color:var(--bg);transform:rotate(-2deg)}
+.small{font-size:14px;margin:16px 0 0}
+.steps{display:flex;flex-wrap:wrap;gap:24px}
+.steps>div{flex:1 1 200px}
+.steps .n{font-size:36px;color:var(--blue)}
+.box{max-width:720px;margin:0 auto 40px;background:var(--blue);color:var(--paper);border-radius:28px;padding:38px 28px;text-align:center;box-shadow:0 12px 0 var(--sky)}.box h2{margin-bottom:4px}.event-label{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;opacity:.78}.event-date{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:76px;line-height:.95;letter-spacing:-.06em;margin:8px 0 12px}.event-meta{font-size:18px;font-weight:700;margin-bottom:4px}.event-deadline{font-size:14px;opacity:.78;margin-bottom:22px}.box .btn{background:var(--paper);color:var(--blue)}.box .btn:hover{color:var(--blue);filter:none}.box p{margin:0}
+.foot{text-align:center;padding:4px 24px 48px;font-size:15px}.foot a{font-weight:800;color:var(--blue);text-underline-offset:3px}.foot a:hover{text-decoration-thickness:2px}@keyframes heroIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+@media (max-width:520px){h1{font-size:38px}.top{padding:20px}.top .name{font-size:20px}.lead{white-space:normal}.event-date{font-size:62px}}
+
+/* Hybrid: moderne bloktypografi + håndtegnede accenter */
+:root{--hand:'Kalam',cursive}
+.top .name{
+  font-family:'Noot','Bricolage Grotesque',sans-serif;
+  font-weight:400;
+  letter-spacing:-1px;
+  text-transform:uppercase;
+}
+h1.serif{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-weight:800;
+  letter-spacing:-2px;
+}
+h2.serif,.item .t{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-weight:800;
+  letter-spacing:-.7px;
+}
+.steps .n{
+  font-family:var(--hand);
+  font-weight:700;
+}
+.pop-kicker,.pop-meta,.pop-deadline{
+  font-family:var(--hand);
+}
+.pop-kicker{
+  letter-spacing:.5px;
+  transform:rotate(-1deg);
+}
+.item .p{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-weight:800;
+  border-radius:999px;
+  transform:rotate(-.5deg);
+}
+.item:nth-of-type(even) .p{transform:rotate(.6deg)}
+.pill,.btn{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-weight:800;
+  letter-spacing:-.2px;
+}
+.small,.foot{
+  font-family:'Instrument Sans',sans-serif;
+}
+
+
+/* Hero-undertekst: lettere og mere rolig */
+.lead{
+  font-family:'Instrument Sans',sans-serif;
+  font-size:18px;
+  line-height:1.5;
+  font-weight:400;
+  letter-spacing:-.01em;
+  text-transform:none;
+  transform:none;
+}
+@media (max-width:520px){
+  .lead{font-size:16px;letter-spacing:-.005em}
+}
+</style>
+</head>
+<body>
+<div class="top">
+  <span class="serif name">STRETCH</span>
+  <a class="pill order-link" href="bestil.html">Bestil pizza</a>
+</div>
+
+<div class="hero">
+<svg viewBox="0 0 720 560" role="img" aria-label="Håndtegnet murstenshus på Østerbro med STRETCH-skilt">
+<defs>
+  <!-- Diskret forskudt murstensmønster med let ujævne håndtegnede fuger -->
+  <pattern id="stretch-bricks" x="0" y="0" width="88" height="44" patternUnits="userSpaceOnUse">
+    <g fill="none" stroke="var(--line)" stroke-width="1.45" stroke-linecap="round" opacity=".7">
+      <path d="M0 0 Q22 1 44 0 T88 0 M0 22 Q24 21 44 22 T88 22 M0 44 Q24 43 44 44 T88 44"/>
+      <path d="M0 0 l1 21 M44 0 l-1 21 M88 0 l-1 21 M22 22 l1 21 M66 22 l-1 21"/>
+    </g>
+  </pattern>
+  <clipPath id="stretch-facade-clip">
+    <path d="M196 508 L190 104 Q190 92 202 89 L514 86 Q528 88 527 103 L533 508 Z"/>
+  </clipPath>
+</defs>
+<g fill="none" stroke="var(--ink)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- håndtegnet fortov -->
+  <path d="M48 521 C160 516 252 525 356 520 C468 515 563 524 674 519"/>
+
+  <!-- smalt, højt rækkehus med bevidst let skæve linjer -->
+  <path d="M196 508 L190 104 Q190 92 202 89 L514 86 Q528 88 527 103 L533 508 Z" fill="var(--paper)"/>
+  <!-- Murstensfuger ligger bag vinduerne og klippes til facaden -->
+  <rect x="190" y="88" width="345" height="421" fill="url(#stretch-bricks)" stroke="none" clip-path="url(#stretch-facade-clip)"/>
+  <path d="M190 105 Q278 99 359 102 Q444 98 527 103" />
+  <path d="M207 88 Q354 74 511 86" />
+
+  <!-- tag / gesims -->
+  <path d="M178 106 Q354 94 540 104" stroke-width="5"/>
+  <path d="M201 77 Q355 65 516 76" />
+  <path d="M224 76 L230 55 L487 55 L494 76" fill="var(--sky)"/>
+  <path d="M253 55 L259 42 L456 42 L463 55" />
+
+  <!-- etage-linjer, lidt ujævne -->
+  <path d="M198 189 Q359 185 523 190"/>
+  <path d="M197 285 Q357 280 526 286"/>
+  <path d="M198 382 Q360 377 529 383"/>
+
+  <!-- 4. sal -->
+  <path d="M228 126 Q228 117 237 116 L307 115 Q316 116 316 125 L315 166 L229 168 Z" fill="var(--sky)"/>
+  <path d="M400 124 Q400 115 409 114 L479 113 Q488 114 488 123 L489 165 L401 166 Z" fill="var(--sky)"/>
+  <path d="M272 116 L272 167 M444 114 L444 165"/>
+
+  <!-- 3. sal -->
+  <path d="M228 213 Q229 204 238 204 L307 203 Q316 204 316 213 L315 260 L229 262 Z" fill="var(--sky)"/>
+  <path d="M400 211 Q400 202 409 202 L479 201 Q488 202 488 211 L489 258 L401 260 Z" fill="var(--sky)"/>
+  <path d="M272 204 L272 261 M444 202 L444 259"/>
+  <path d="M242 270 Q272 263 302 269 M414 268 Q444 261 474 267" stroke-width="2.5"/>
+
+  <!-- 2. sal -->
+  <path d="M228 309 Q229 300 238 300 L307 299 Q316 300 316 309 L315 356 L229 358 Z" fill="var(--door)"/>
+  <path d="M400 307 Q400 298 409 298 L479 297 Q488 298 488 307 L489 354 L401 356 Z" fill="var(--door)"/>
+  <path d="M272 300 L272 357 M444 298 L444 355"/>
+
+  <!-- stue / pizza-vindue -->
+  <path d="M216 405 Q216 395 226 394 L367 393 Q377 394 377 404 L378 486 L216 488 Z" fill="var(--sky)"/>
+  <path d="M389 402 Q390 392 400 392 L500 391 Q510 392 510 402 L513 508 L390 508 Z" fill="var(--door)"/>
+  <path d="M225 455 Q295 451 368 455"/>
+  <path d="M449 392 L450 508"/>
+  <circle cx="494" cy="455" r="5" fill="var(--ink)"/>
+
+  <!-- lille håndtegnet STRETCH-skilt -->
+  <path d="M229 372 Q297 366 365 371 L363 400 Q297 395 231 400 Z" fill="var(--blue)"/>
+  <text x="297" y="390" text-anchor="middle" fill="#FFF9EE" stroke="none"
+        style="font-family:'Noot','Kalam',cursive;font-weight:400;font-size:20px;letter-spacing:.3px">STRETCH</text>
+
+  <!-- tydelig håndtegnet pizza i vinduet -->
+  <g stroke="var(--ink)" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="282" cy="454" r="29" fill="var(--paper)" stroke-width="3"/>
+    <circle cx="282" cy="454" r="24" fill="var(--door)" stroke-width="2.2"/>
+    <!-- mozzarella / toppings -->
+    <path d="M267 445 q7 -8 14 -1 q-2 9 -11 8 q-7 -1 -3 -7z" fill="var(--paper)" stroke-width="1.8"/>
+    <path d="M286 459 q7 -8 14 -1 q-1 9 -10 8 q-8 -1 -4 -7z" fill="var(--paper)" stroke-width="1.8"/>
+    <path d="M289 438 q6 -6 11 0 q-2 7 -8 6 q-6 -1 -3 -6z" fill="var(--paper)" stroke-width="1.6"/>
+    <!-- basilikum -->
+    <path d="M274 463 q-9 -7 -12 2 q7 6 12 -2z" fill="var(--blue)" stroke-width="1.6"/>
+    <path d="M300 449 q8 -7 11 1 q-6 6 -11 -1z" fill="var(--blue)" stroke-width="1.6"/>
+    <!-- lidt håndtegnet skorpe -->
+    <path d="M260 435 q20 -17 43 0" stroke="var(--blue)" stroke-width="2" fill="none"/>
+  </g>
+
+  <!-- lemonadeflaske, uden gul -->
+  <path d="M329 416 L329 426 Q321 431 321 441 L321 470 Q321 477 328 478 L344 478 Q351 477 351 470 L351 441 Q351 431 343 426 L343 416 Z" fill="var(--paper)"/>
+  <path d="M330 445 Q336 439 343 445 Q337 450 330 445" stroke="var(--blue)" stroke-width="2.5"/>
+  <path d="M336 438 q6 -8 11 -3 q-4 6 -11 3" fill="var(--door)" stroke-width="2"/>
+
+  <!-- lille åbent-skilt i døren -->
+  <path d="M414 418 Q449 414 484 418 L482 443 Q449 439 416 443 Z" fill="var(--paper)"/>
+  <text x="449" y="435" text-anchor="middle" fill="#761827" stroke="none"
+        style="font-family:'Kalam',cursive;font-weight:700;font-size:16px">ÅBEN</text>
+
+
+  <!-- hyggelige klatreplanter langs facaden -->
+  <g stroke="var(--blue)" stroke-width="2.4">
+    <path d="M204 490 C184 462 211 443 194 419 C179 397 205 381 194 354 C184 329 207 310 198 286 C190 263 207 241 199 218"/>
+    <path d="M197 454 q-17 -12 -24 -2 q13 8 24 2 M199 437 q17 -13 25 -2 q-14 9 -25 2"/>
+    <path d="M194 405 q-16 -12 -24 -2 q13 9 24 2 M196 386 q17 -13 25 -1 q-14 9 -25 1"/>
+    <path d="M195 350 q-16 -12 -23 -1 q12 8 23 1 M198 331 q17 -13 24 -1 q-13 9 -24 1"/>
+    <path d="M197 296 q-15 -11 -22 -1 q12 8 22 1 M200 273 q16 -12 23 -1 q-13 9 -23 1"/>
+    <path d="M199 239 q-14 -10 -21 0 q12 7 21 0"/>
+
+    <path d="M523 493 C543 467 519 446 539 422 C555 403 532 383 545 360 C557 337 535 318 546 296"/>
+    <path d="M536 459 q-16 -12 -24 -2 q13 9 24 2 M537 441 q17 -13 25 -2 q-14 9 -25 2"/>
+    <path d="M540 407 q-16 -12 -24 -1 q13 8 24 1 M542 388 q17 -13 24 -1 q-13 9 -24 1"/>
+    <path d="M543 353 q-15 -11 -22 -1 q12 8 22 1 M545 332 q16 -12 23 -1 q-13 9 -23 1"/>
+  </g>
+
+  <!-- blomsterkasser under vinduerne -->
+  <g stroke="var(--ink)" stroke-width="2.3">
+    <path d="M237 169 q35 6 70 0 l-5 10 q-30 5 -60 0 z" fill="var(--door)"/>
+    <path d="M409 167 q35 6 70 0 l-5 10 q-30 5 -60 0 z" fill="var(--door)"/>
+    <path d="M244 165 q5 -13 10 0 q6 -17 12 0 q7 -12 12 0 q7 -16 13 0 q6 -11 11 0" stroke="var(--blue)"/>
+    <path d="M416 163 q5 -13 10 0 q6 -17 12 0 q7 -12 12 0 q7 -16 13 0 q6 -11 11 0" stroke="var(--blue)"/>
+  </g>
+
+  <!-- potter, bænk og cykel foran huset -->
+  <g stroke="var(--ink)" stroke-width="2.8">
+    <path d="M179 489 l8 28 h22 l8 -28 z" fill="var(--door)"/>
+    <path d="M182 487 q14 -30 29 0 M187 474 q-13 -9 -18 2 M202 468 q12 -10 18 -1 M195 459 q-2 -14 5 -22" stroke="var(--blue)"/>
+
+    <path d="M543 490 l7 27 h20 l7 -27 z" fill="var(--door)"/>
+    <path d="M546 488 q12 -29 26 0 M552 472 q-12 -9 -17 1 M563 465 q12 -9 17 0" stroke="var(--blue)"/>
+
+    <circle cx="153" cy="492" r="20"/>
+    <circle cx="207" cy="492" r="20"/>
+    <path d="M153 492 l22 -34 l32 34 l-42 -7 l25 -27 h-16 M190 458 l11 -8 M174 458 h17"/>
+
+    <path d="M270 493 q39 -4 79 0 M276 482 q34 -4 67 0 M282 482 l-4 30 M338 482 l5 30"/>
+  </g>
+
+  <!-- gardiner og små hjemlige detaljer i vinduer -->
+  <g stroke="var(--line)" stroke-width="2">
+    <path d="M235 127 q15 14 30 0 M279 127 q15 14 30 0"/>
+    <path d="M407 125 q15 14 30 0 M451 125 q15 14 30 0"/>
+    <path d="M235 214 q15 14 30 0 M279 214 q15 14 30 0"/>
+    <path d="M407 212 q15 14 30 0 M451 212 q15 14 30 0"/>
+  </g>
+
+  <!-- små håndtegnede sten/murstensmærker -->
+  <g stroke="var(--line)" stroke-width="1.8">
+    <path d="M215 118 l19 -1 M475 110 l25 1 M210 196 l17 -1 M486 199 l23 1"/>
+    <path d="M214 276 l21 -1 M480 273 l27 1 M211 368 l18 -1 M488 369 l22 1"/>
+    <path d="M225 96 l15 -1 M453 94 l18 1"/>
+  </g>
+
+
+  <!-- små Østerbro-detaljer -->
+  <path d="M165 505 q8 -36 20 -1 M158 482 q13 8 27 0 M548 507 q7 -29 18 -2 M542 487 q12 7 24 -1" stroke="var(--blue)" stroke-width="3"/>
+  <path d="M552 509 q18 -15 36 0 q-18 8 -36 0" fill="var(--sky)"/>
+
+  <!-- enkelte murstensstreger for håndtegnet karakter -->
+  <path d="M205 145 l14 -1 M493 177 l18 1 M204 240 l13 -1 M499 327 l15 1 M207 347 l11 -1" stroke="var(--line)" stroke-width="2"/>
+</g>
+</svg>
+<div style="
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  margin-bottom: 14px;
+">
+  POP-UP #01 · 30. JANUAR 2027
+</div>
+
+<h1 class="serif">
+  NAPOLITANSK PIZZA<br>
+  <span style="color: #761827;">
+    TIL AFHENTNING PÅ ØSTERBRO
+  </span>
+</h1>
+
+<p class="lead">
+  Dejen hæver i 48 timer. Pizzaen bages, når du har bestilt, og du henter den varm.
+</p>
+
+<a class="btn order-link" href="bestil.html">BESTIL →</a>
+</div>
+
+<div class="wrap">
+<h2 class="serif">MENU</h2>
+<div class="item"><div><div class="serif t">PLAIN JANE</div><div>Mutti Pelati, mozzarella, basilikumolie</div></div><div class="p">89 kr.</div></div>
+<div class="item"><div><div class="serif t">SHROOM BOOM</div><div>Crème fraîche, mozzarella, svampe, løgkompot, hvidløgssmør, purløg</div></div><div class="p">99 kr.</div></div>
+<div class="item"><div><div class="serif t">PIGGY</div><div>Crème fraîche, mozzarella, salsiccia, løgkompot, ricotta, basilikumolie</div></div><div class="p">99 kr.</div></div>
+<div class="item"><div><div class="serif t">HOT ONE</div><div>Mutti Pelati, mozzarella, Salami Picante, ricotta</div></div><div class="p">99 kr.</div></div>
+<div class="item"><div><div class="serif t">HUSETS LEMONADE</div><div>Citron og basilikum</div></div><div class="p">25 kr.</div></div>
+<div class="item"><div><div class="serif t">COOKIE</div><div>Brunet smør, mørk chokolade, flagesalt</div></div><div class="p">35 kr.</div></div>
+<div class="item"><div><div class="serif t">WHIPPED RICOTTA</div><div>Pisket ricotta, basilikumolie</div></div><div class="p">15 kr.</div></div><p class="small">Pizzaerne indeholder hvede (gluten) og mælk. Piggy og Hot One indeholder svinekød. Kontakt os om allergener.</p>
+</div>
+
+<div class="wrap">
+<h2 class="serif">Sådan henter du din pizza</h2>
+<div class="steps">
+<div><div class="serif n">1</div><div><strong>Bestil et tidsrum</strong></div><div>Vælg dag og tid. Vi bager få pizzaer ad gangen, så de første tider går hurtigt.</div></div>
+<div><div class="serif n">2</div><div><strong>Betal og få adressen</strong></div><div>Du får en mail med betaling og præcist afhentningstidspunkt. Adressen oplyses separat.</div></div>
+<div><div class="serif n">3</div><div><strong>Hent og spis</strong></div><div>Pizzaen kommer varm i kassen. Spis den inden for 15 minutter.</div></div>
+</div>
+</div>
+
+<div id="bestil" class="box">
+<div class="event-label">Næste pop-up</div>
+<div class="event-date">30 / 01</div>
+<div class="event-meta">Østerbro · 17:00–19:30</div>
+<div class="event-deadline">Bestil senest kl. 12:00 dagen før</div>
+<a class="btn order-link" href="bestil.html">Bestil pizza</a>
+</div>
+
+
+<div class="foot">
+<div>Følg med på Instagram: <a href="https://www.instagram.com/gastrokokken/" target="_blank" rel="noopener">@gastrokokken</a></div>
+<div>STRETCH er et lille pizzaprojekt på Østerbro.</div>
+</div>
+
+
+</body>
+</html>
