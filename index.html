@@ -3,20 +3,22 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>STRETCH</title>
+<link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<title>DISCO PIZZA · Pizza med lidt mere fest</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Kalam:wght@400;700&family=Instrument+Sans:wght@400;500;600&display=swap">
 <style>
-/* Læg noot-aj.woff ved siden af HTML-filen for at aktivere logo-fonten. */
+/* Logo-font: behold fonts/noot-aj.woff i samme mappestruktur. */
 @font-face {
   font-family: 'Noot';
-  src: url('./noot-aj.woff') format('woff');
+  src: url('fonts/noot-aj.woff') format('woff');
   font-style: normal;
   font-weight: 400;
   font-display: swap;
 }
 
 :root{
-  --bg:#FFF3DF;--ink:#291719;--blue:#761827;--sky:#F1D6CD;--line:#C9928C;--paper:#FFF9EE;--door:#E6B9AE;--butter:#F1C453;
+  --bg:#F8F1E4;--ink:#302B28;--blue:#DE4736;--sky:#EADDD0;--line:#D3C0AD;--paper:#FFF9EF;--door:#E7B9A7;--butter:#BDCAA8;--illustration:#9D806E;--accent-text:white;
   box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
 }
 html{scroll-padding-top:env(safe-area-inset-top,0px);height:100%}
@@ -27,23 +29,23 @@ a:focus-visible{outline:3px solid var(--line);outline-offset:3px}
 .serif{font-family:'Bricolage Grotesque','Arial Black',sans-serif;font-weight:700;letter-spacing:-0.025em}
 .top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding:24px 32px}
 .top .name{font-size:36px;font-weight:800;letter-spacing:-.045em;text-transform:uppercase}
-.pill{border:2px solid var(--blue);color:var(--blue);border-radius:999px;padding:8px 20px;text-decoration:none;font-weight:700;transition:background .2s ease,color .2s ease,transform .2s ease}.pill:hover{background:var(--blue);color:#FFF9EE;transform:translateY(-1px)}
-.hero{text-align:center;padding:8px 24px 56px}
+.pill{border:2px solid var(--blue);color:var(--blue);border-radius:999px;padding:8px 20px;text-decoration:none;font-weight:700;transition:background .2s ease,color .2s ease,transform .2s ease}.pill:hover{background:var(--blue);color:var(--paper);transform:translateY(-1px)}
+.hero{text-align:center;padding:8px 24px 56px;position:relative}
 .hero svg{width:100%;max-width:720px;height:auto;display:block;margin:0 auto;animation:heroIn .7s cubic-bezier(.2,.8,.2,1) both}
 h1{font-size:52px;line-height:1.02;margin:32px auto 14px;max-width:660px;letter-spacing:-.045em}.hero-kicker{display:block;color:var(--blue);font-size:.42em;letter-spacing:.04em;text-transform:uppercase;margin-top:10px}
 .lead{max-width:none;margin:0 auto 28px;font-size:18px;white-space:nowrap}
-.btn{display:inline-block;background:var(--blue);color:#FFF9EE;padding:14px 30px;border-radius:999px;text-decoration:none;font-weight:700;font-size:18px;transition:transform .18s ease,filter .18s ease,box-shadow .18s ease}
-.btn:hover{color:#FFF9EE;filter:brightness(.96);transform:translateY(-1px);box-shadow:0 3px 10px rgba(41,23,25,.08)}
+.btn{display:inline-block;background:var(--blue);color:var(--paper);padding:14px 30px;border-radius:999px;text-decoration:none;font-weight:700;font-size:18px;transition:transform .18s ease,filter .18s ease,box-shadow .18s ease}
+.btn:hover{color:var(--paper);filter:brightness(.96);transform:translateY(-1px);box-shadow:0 3px 10px rgba(48,48,43,.12)}
 .wrap{max-width:720px;margin:0 auto;padding:16px 24px 40px}
 h2{font-size:32px;margin:0 0 16px}
 .item{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:2px dotted var(--line)}
 .item .t{font-size:23px;font-weight:800;letter-spacing:-.035em}.item>div:first-child>div:last-child{font-size:15px;opacity:.72;margin-top:2px}
-.item .p{font-weight:800;white-space:nowrap;align-self:flex-start;background:transparent;color:var(--blue);border:2px solid var(--blue);border-radius:10px;padding:3px 12px;transition:background .18s ease,color .18s ease,transform .18s ease}.item:hover .p{background:var(--blue);color:var(--bg);transform:rotate(-2deg)}
+.item .p{font-weight:800;white-space:nowrap;align-self:flex-start;background:transparent;color:var(--blue);border:2px solid var(--blue);border-radius:10px;padding:3px 12px;transition:background .18s ease,color .18s ease,transform .18s ease}.item:hover .p{background:var(--blue);color:var(--accent-text);transform:rotate(-2deg)}
 .small{font-size:14px;margin:16px 0 0}
 .steps{display:flex;flex-wrap:wrap;gap:24px}
 .steps>div{flex:1 1 200px}
 .steps .n{font-size:36px;color:var(--blue)}
-.box{max-width:720px;margin:0 auto 40px;background:var(--blue);color:var(--paper);border-radius:28px;padding:38px 28px;text-align:center;box-shadow:0 12px 0 var(--sky)}.box h2{margin-bottom:4px}.event-label{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;opacity:.78}.event-date{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:76px;line-height:.95;letter-spacing:-.06em;margin:8px 0 12px}.event-meta{font-size:18px;font-weight:700;margin-bottom:4px}.event-deadline{font-size:14px;opacity:.78;margin-bottom:22px}.box .btn{background:var(--paper);color:var(--blue)}.box .btn:hover{color:var(--blue);filter:none}.box p{margin:0}
+.box{max-width:720px;margin:0 auto 40px;background:var(--blue);color:var(--accent-text);border-radius:28px;padding:38px 28px;text-align:center;box-shadow:0 12px 0 var(--sky)}.box h2{margin-bottom:4px}.event-label{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;opacity:.78}.event-date{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:76px;line-height:.95;letter-spacing:-.06em;margin:8px 0 12px}.event-meta{font-size:18px;font-weight:700;margin-bottom:4px}.event-deadline{font-size:14px;opacity:.78;margin-bottom:22px}.box .btn{background:var(--paper);color:var(--ink)}.box .btn:hover{color:var(--ink);filter:none}.box p{margin:0}
 .foot{text-align:center;padding:4px 24px 48px;font-size:15px}.foot a{font-weight:800;color:var(--blue);text-underline-offset:3px}.foot a:hover{text-decoration-thickness:2px}@keyframes heroIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
 @media (max-width:520px){h1{font-size:38px}.top{padding:20px}.top .name{font-size:20px}.lead{white-space:normal}.event-date{font-size:62px}}
 
@@ -106,16 +108,96 @@ h2.serif,.item .t{
 @media (max-width:520px){
   .lead{font-size:16px;letter-spacing:-.005em}
 }
+
+/* DISCO PIZZA: playful but controlled, tomato pop brand system */
+:root{--accent:#DE4736;--muted:#75675F}
+.top{max-width:1120px;margin:auto}
+.top .name{font-size:clamp(25px,4vw,40px);line-height:1.05}
+.pill{background:var(--paper);box-shadow:4px 4px 0 var(--ink);transform:rotate(2deg)}
+.pill:hover{transform:rotate(0deg) translateY(-2px);box-shadow:2px 2px 0 var(--ink)}
+.hero{padding-top:4px}
+.hero svg{max-width:650px}
+.hero h1{max-width:850px;font-size:clamp(38px,6vw,70px);line-height:1.03;margin-top:16px}
+.hero-headline-accent{color:var(--accent);display:inline-block;transform:rotate(-1.5deg)}
+.hero .lead{max-width:610px;white-space:normal;margin-bottom:26px}
+.hero .btn{transform:rotate(-2deg);box-shadow:5px 5px 0 var(--ink)}
+.hero .btn:hover{transform:rotate(0deg) translateY(-2px);box-shadow:3px 3px 0 var(--ink)}
+.hero .pop-stamp{display:inline-block;background:var(--ink);color:var(--paper);border-radius:6px;padding:6px 13px;font-family:'Kalam',cursive;font-weight:700;transform:rotate(2deg);margin-bottom:4px}
+.section-kicker{font-size:12px;font-weight:800;letter-spacing:.18em;color:var(--accent);margin-bottom:6px}
+.section-intro{font-size:16px;margin:-8px 0 18px;color:var(--muted)}
+.mini-star{font-family:'Kalam',cursive;color:var(--accent);display:inline-block;transform:rotate(-15deg)}
+.item .t{transition:transform .2s ease}
+.item:hover .t{transform:translateX(5px)}
+.item .p{font-size:14px}
+.steps{margin-top:24px;gap:28px}
+.steps>div{background:var(--paper);border:1.5px solid var(--line);border-radius:18px;padding:22px 18px;box-shadow:4px 4px 0 var(--sky)}
+.steps .n{font-size:44px;line-height:1.1;transform:rotate(-7deg)}
+.box{position:relative;overflow:hidden;box-shadow:8px 9px 0 var(--ink);margin-top:16px}
+.box::before{content:'✳';position:absolute;left:20px;top:12px;font-size:64px;line-height:1;color:var(--paper);opacity:.16;transform:rotate(-15deg)}
+.box::after{content:'✳';position:absolute;right:22px;bottom:4px;font-size:74px;line-height:1;color:var(--paper);opacity:.16;transform:rotate(12deg)}
+.box .btn{position:relative;z-index:1}
+.foot{padding-top:20px;border-top:2px dashed var(--line);max-width:720px;margin:auto}
+
+
+/* DISCO menu: tydelige kategorier med én rolig accent */
+.menu-section{margin-top:30px}
+.menu-section + .menu-section{margin-top:36px}
+.menu-category{display:flex;align-items:baseline;gap:12px;margin:0 0 6px}
+.menu-category .menu-number{font-family:'Kalam',cursive;color:var(--accent);font-size:22px;font-weight:700;transform:rotate(-8deg);display:inline-block}
+.menu-category h3{margin:0;color:var(--ink);font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(25px,4.5vw,35px);letter-spacing:-.055em;line-height:1.1}
+.menu-category::after{content:'';height:2px;flex:1;background:var(--line);margin-left:6px;transform:translateY(-6px)}
+.menu-section-note{font-size:14px;color:var(--muted);margin:0 0 12px}
+.menu-section .item:last-of-type{border-bottom:2px dotted var(--line)}
+.menu-addon{font-size:14px;color:var(--muted);margin:12px 0 0}
+.menu-addon strong{color:var(--ink)}
+.menu-allergens{margin-top:24px;padding-top:12px;border-top:1px solid var(--line);color:var(--muted)}
+
+@media (max-width:520px){.hero h1{font-size:clamp(34px,9vw,47px)}.hero svg{max-width:100%}.box{margin-left:14px;margin-right:14px;padding:38px 14px}.steps>div{flex:1 1 100%}.top .name{font-size:clamp(25px,7vw,34px)}.item .t{font-size:20px}}
+
+
+
+/* Roligere udtryk */
+.top{padding:24px 32px;border-bottom:1px solid var(--line)}
+.top .name{font-size:clamp(26px,4vw,36px);letter-spacing:.4px}
+.pill{background:transparent;box-shadow:none;transform:none;border-color:var(--blue)}
+.pill:hover{transform:none;box-shadow:none;background:var(--blue);color:var(--paper)}
+.hero{padding:18px 24px 44px}
+.hero svg{max-width:600px}
+.hero .pop-stamp{background:transparent;color:var(--muted);padding:0;border-radius:0;font-family:'Instrument Sans',sans-serif;font-size:14px;font-weight:600;letter-spacing:.02em;transform:none;margin-bottom:10px}
+.hero h1{max-width:720px;font-size:clamp(30px,5vw,46px);line-height:1.12;margin-top:8px;margin-bottom:12px;letter-spacing:-.04em}
+.hero-headline-accent{color:inherit;transform:none}
+.hero .lead{max-width:560px;font-size:17px;color:var(--muted);margin-bottom:24px}
+.hero .btn,.btn{transform:none;box-shadow:none;border-radius:999px}
+.hero .btn:hover,.btn:hover{transform:none;box-shadow:none}
+.section-kicker{font-size:12px;letter-spacing:.14em;color:var(--muted);margin-bottom:6px}
+.section-intro{font-size:15px;color:var(--muted)}
+.item .t{transform:none !important}
+.item .p{border-radius:999px;transform:none !important;font-size:14px;padding:4px 12px}
+.item:hover .p{transform:none;background:var(--blue);color:var(--paper)}
+.steps>div{background:transparent;border:1px solid var(--line);border-radius:18px;padding:20px 18px;box-shadow:none}
+.steps .n{font-family:'Bricolage Grotesque',sans-serif;font-size:28px;transform:none;color:var(--blue)}
+.box{background:var(--paper);color:var(--ink);box-shadow:none;border:1px solid var(--line);border-radius:24px}
+.box::before,.box::after{display:none}
+.box .btn{background:var(--blue);color:var(--paper)}
+.event-label{color:var(--muted);opacity:1}
+.event-date{font-size:52px;color:var(--ink)}
+.event-meta,.event-deadline{color:var(--muted)}
+.menu-category .menu-number{font-family:'Instrument Sans',sans-serif;font-size:14px;transform:none;color:var(--muted)}
+.menu-category h3{font-size:clamp(24px,4vw,32px)}
+.foot{border-top:1px solid var(--line);padding-top:24px;margin-top:16px}
+@media (max-width:520px){.top{padding:18px 20px}.hero{padding-left:18px;padding-right:18px}.hero h1{font-size:clamp(28px,8vw,38px)}.event-date{font-size:44px}}
+
 </style>
+<script src="config.js"></script>
 </head>
 <body>
 <div class="top">
-  <span class="serif name">STRETCH</span>
+  <span class="serif name" role="img" aria-label="DISCO PIZZA">DISCO PIZZA</span>
   <a class="pill order-link" href="bestil.html">Bestil pizza</a>
 </div>
 
 <div class="hero">
-<svg viewBox="0 0 720 560" role="img" aria-label="Håndtegnet murstenshus på Østerbro med STRETCH-skilt">
+<svg viewBox="0 0 720 560" role="img" aria-label="Håndtegnet murstenshus på Østerbro med DISCO PIZZA-skilt">
 <defs>
   <!-- Diskret forskudt murstensmønster med let ujævne håndtegnede fuger -->
   <pattern id="stretch-bricks" x="0" y="0" width="88" height="44" patternUnits="userSpaceOnUse">
@@ -174,9 +256,9 @@ h2.serif,.item .t{
   <circle cx="494" cy="455" r="5" fill="var(--ink)"/>
 
   <!-- lille håndtegnet STRETCH-skilt -->
-  <path d="M229 372 Q297 366 365 371 L363 400 Q297 395 231 400 Z" fill="var(--blue)"/>
-  <text x="297" y="390" text-anchor="middle" fill="#FFF9EE" stroke="none"
-        style="font-family:'Noot','Kalam',cursive;font-weight:400;font-size:20px;letter-spacing:.3px">STRETCH</text>
+  <path d="M229 372 Q297 366 365 371 L363 400 Q297 395 231 400 Z" fill="var(--illustration)"/>
+  <text x="297" y="390" text-anchor="middle" fill="var(--paper)" stroke="none"
+        style="font-family:'Noot','Kalam',cursive;font-weight:400;font-size:20px;letter-spacing:.3px">DISCO</text>
 
   <!-- tydelig håndtegnet pizza i vinduet -->
   <g stroke="var(--ink)" stroke-linecap="round" stroke-linejoin="round">
@@ -187,25 +269,25 @@ h2.serif,.item .t{
     <path d="M286 459 q7 -8 14 -1 q-1 9 -10 8 q-8 -1 -4 -7z" fill="var(--paper)" stroke-width="1.8"/>
     <path d="M289 438 q6 -6 11 0 q-2 7 -8 6 q-6 -1 -3 -6z" fill="var(--paper)" stroke-width="1.6"/>
     <!-- basilikum -->
-    <path d="M274 463 q-9 -7 -12 2 q7 6 12 -2z" fill="var(--blue)" stroke-width="1.6"/>
-    <path d="M300 449 q8 -7 11 1 q-6 6 -11 -1z" fill="var(--blue)" stroke-width="1.6"/>
+    <path d="M274 463 q-9 -7 -12 2 q7 6 12 -2z" fill="var(--illustration)" stroke-width="1.6"/>
+    <path d="M300 449 q8 -7 11 1 q-6 6 -11 -1z" fill="var(--illustration)" stroke-width="1.6"/>
     <!-- lidt håndtegnet skorpe -->
-    <path d="M260 435 q20 -17 43 0" stroke="var(--blue)" stroke-width="2" fill="none"/>
+    <path d="M260 435 q20 -17 43 0" stroke="var(--illustration)" stroke-width="2" fill="none"/>
   </g>
 
   <!-- lemonadeflaske, uden gul -->
   <path d="M329 416 L329 426 Q321 431 321 441 L321 470 Q321 477 328 478 L344 478 Q351 477 351 470 L351 441 Q351 431 343 426 L343 416 Z" fill="var(--paper)"/>
-  <path d="M330 445 Q336 439 343 445 Q337 450 330 445" stroke="var(--blue)" stroke-width="2.5"/>
+  <path d="M330 445 Q336 439 343 445 Q337 450 330 445" stroke="var(--illustration)" stroke-width="2.5"/>
   <path d="M336 438 q6 -8 11 -3 q-4 6 -11 3" fill="var(--door)" stroke-width="2"/>
 
   <!-- lille åbent-skilt i døren -->
   <path d="M414 418 Q449 414 484 418 L482 443 Q449 439 416 443 Z" fill="var(--paper)"/>
-  <text x="449" y="435" text-anchor="middle" fill="#761827" stroke="none"
-        style="font-family:'Kalam',cursive;font-weight:700;font-size:16px">ÅBEN</text>
+  <text x="449" y="435" text-anchor="middle" fill="var(--illustration)" stroke="none"
+        style="font-family:'Kalam',cursive;font-weight:700;font-size:16px">HEY!</text>
 
 
   <!-- hyggelige klatreplanter langs facaden -->
-  <g stroke="var(--blue)" stroke-width="2.4">
+  <g stroke="var(--illustration)" stroke-width="2.4">
     <path d="M204 490 C184 462 211 443 194 419 C179 397 205 381 194 354 C184 329 207 310 198 286 C190 263 207 241 199 218"/>
     <path d="M197 454 q-17 -12 -24 -2 q13 8 24 2 M199 437 q17 -13 25 -2 q-14 9 -25 2"/>
     <path d="M194 405 q-16 -12 -24 -2 q13 9 24 2 M196 386 q17 -13 25 -1 q-14 9 -25 1"/>
@@ -223,17 +305,17 @@ h2.serif,.item .t{
   <g stroke="var(--ink)" stroke-width="2.3">
     <path d="M237 169 q35 6 70 0 l-5 10 q-30 5 -60 0 z" fill="var(--door)"/>
     <path d="M409 167 q35 6 70 0 l-5 10 q-30 5 -60 0 z" fill="var(--door)"/>
-    <path d="M244 165 q5 -13 10 0 q6 -17 12 0 q7 -12 12 0 q7 -16 13 0 q6 -11 11 0" stroke="var(--blue)"/>
-    <path d="M416 163 q5 -13 10 0 q6 -17 12 0 q7 -12 12 0 q7 -16 13 0 q6 -11 11 0" stroke="var(--blue)"/>
+    <path d="M244 165 q5 -13 10 0 q6 -17 12 0 q7 -12 12 0 q7 -16 13 0 q6 -11 11 0" stroke="var(--illustration)"/>
+    <path d="M416 163 q5 -13 10 0 q6 -17 12 0 q7 -12 12 0 q7 -16 13 0 q6 -11 11 0" stroke="var(--illustration)"/>
   </g>
 
   <!-- potter, bænk og cykel foran huset -->
   <g stroke="var(--ink)" stroke-width="2.8">
     <path d="M179 489 l8 28 h22 l8 -28 z" fill="var(--door)"/>
-    <path d="M182 487 q14 -30 29 0 M187 474 q-13 -9 -18 2 M202 468 q12 -10 18 -1 M195 459 q-2 -14 5 -22" stroke="var(--blue)"/>
+    <path d="M182 487 q14 -30 29 0 M187 474 q-13 -9 -18 2 M202 468 q12 -10 18 -1 M195 459 q-2 -14 5 -22" stroke="var(--illustration)"/>
 
     <path d="M543 490 l7 27 h20 l7 -27 z" fill="var(--door)"/>
-    <path d="M546 488 q12 -29 26 0 M552 472 q-12 -9 -17 1 M563 465 q12 -9 17 0" stroke="var(--blue)"/>
+    <path d="M546 488 q12 -29 26 0 M552 472 q-12 -9 -17 1 M563 465 q12 -9 17 0" stroke="var(--illustration)"/>
 
     <circle cx="153" cy="492" r="20"/>
     <circle cx="207" cy="492" r="20"/>
@@ -259,59 +341,64 @@ h2.serif,.item .t{
 
 
   <!-- små Østerbro-detaljer -->
-  <path d="M165 505 q8 -36 20 -1 M158 482 q13 8 27 0 M548 507 q7 -29 18 -2 M542 487 q12 7 24 -1" stroke="var(--blue)" stroke-width="3"/>
+  <path d="M165 505 q8 -36 20 -1 M158 482 q13 8 27 0 M548 507 q7 -29 18 -2 M542 487 q12 7 24 -1" stroke="var(--illustration)" stroke-width="3"/>
   <path d="M552 509 q18 -15 36 0 q-18 8 -36 0" fill="var(--sky)"/>
 
   <!-- enkelte murstensstreger for håndtegnet karakter -->
   <path d="M205 145 l14 -1 M493 177 l18 1 M204 240 l13 -1 M499 327 l15 1 M207 347 l11 -1" stroke="var(--line)" stroke-width="2"/>
 </g>
 </svg>
-<div style="
-  font-family: 'Instrument Sans', sans-serif;
-  font-size: 21px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  margin-bottom: 14px;
-">
-  POP-UP #01 · 30. JANUAR 2027
+<div class="pop-stamp">Østerbro · København</div>
+
+<h1 class="serif">Napolitansk pizza på Østerbro</h1>
+
+<p class="lead">Langtidshævet dej, gode råvarer og friskbagt pizza til afhentning.</p>
+
+<a class="btn order-link" href="bestil.html">Bestil pizza</a>
 </div>
 
-<h1 class="serif">
-  NAPOLITANSK PIZZA<br>
-  <span style="color: #761827;">
-    TIL AFHENTNING PÅ ØSTERBRO
-  </span>
-</h1>
+<section class="wrap" id="menu" aria-labelledby="menu-title">
+  <div class="section-kicker">MENU</div>
+  <h2 class="serif" id="menu-title">Menu</h2>
+  <p class="section-intro">Pizza, dessert og drikkevarer.</p>
 
-<p class="lead">
-  Dejen hæver i 48 timer. Pizzaen bages, når du har bestilt, og du henter den varm.
-</p>
+  <section class="menu-section" aria-labelledby="pizza-heading">
+    <div class="menu-category"><span class="menu-number" aria-hidden="true">01</span><h3 id="pizza-heading">PIZZA</h3></div>
+    <p class="menu-section-note">Napolitansk pizza med 48 timers hævning.</p>
+    <div class="item"><div><div class="serif t">PLAIN JANE</div><div>Mutti Pelati, mozzarella, basilikumolie</div></div><div class="p">89 kr.</div></div>
+    <div class="item"><div><div class="serif t">SHROOM BOOM</div><div>Crème fraîche, mozzarella, svampe, løgkompot, hvidløgssmør, purløg</div></div><div class="p">99 kr.</div></div>
+    <div class="item"><div><div class="serif t">PIGGY</div><div>Crème fraîche, mozzarella, salsiccia, løgkompot, ricotta, basilikumolie</div></div><div class="p">99 kr.</div></div>
+    <div class="item"><div><div class="serif t">HOT ONE</div><div>Mutti Pelati, mozzarella, Salami Ventricina, ricotta</div></div><div class="p">99 kr.</div></div>
+    <p class="menu-addon"><strong>EKSTRA:</strong> Whipped ricotta med basilikumolie · +15 kr.</p>
+  </section>
 
-<a class="btn order-link" href="bestil.html">BESTIL →</a>
-</div>
+  <section class="menu-section" aria-labelledby="dessert-heading">
+    <div class="menu-category"><span class="menu-number" aria-hidden="true">02</span><h3 id="dessert-heading">SOMETHING SWEET</h3></div>
+    <p class="menu-section-note">Hjemmelavede desserter.</p>
+    <div class="item"><div><div class="serif t">CHOCOLATE MOUSSE</div><div>Luftig chokolademousse med fintrevet chokolade</div></div><div class="p">45 kr.</div></div>
+    <div class="item"><div><div class="serif t">BROWN BUTTER COOKIE</div><div>Brunet smør, mørk chokolade, flagesalt</div></div><div class="p">35 kr.</div></div>
+  </section>
+
+  <section class="menu-section" aria-labelledby="drinks-heading">
+    <div class="menu-category"><span class="menu-number" aria-hidden="true">03</span><h3 id="drinks-heading">DRIKKEVARER</h3></div>
+    <p class="menu-section-note"></p>
+    <div class="item"><div><div class="serif t">HUSETS LEMONADE</div><div>Citron og basilikum</div></div><div class="p">25 kr.</div></div>
+  </section>
+  <p class="small menu-allergens">Alle priser er inkl. moms. Pizzaerne indeholder hvede (gluten) og mælk. Piggy og Hot One indeholder svinekød. Chokolademoussen indeholder æg. Kontakt os om allergener og øvrige ingredienser.</p>
+</section>
 
 <div class="wrap">
-<h2 class="serif">MENU</h2>
-<div class="item"><div><div class="serif t">PLAIN JANE</div><div>Mutti Pelati, mozzarella, basilikumolie</div></div><div class="p">89 kr.</div></div>
-<div class="item"><div><div class="serif t">SHROOM BOOM</div><div>Crème fraîche, mozzarella, svampe, løgkompot, hvidløgssmør, purløg</div></div><div class="p">99 kr.</div></div>
-<div class="item"><div><div class="serif t">PIGGY</div><div>Crème fraîche, mozzarella, salsiccia, løgkompot, ricotta, basilikumolie</div></div><div class="p">99 kr.</div></div>
-<div class="item"><div><div class="serif t">HOT ONE</div><div>Mutti Pelati, mozzarella, Salami Picante, ricotta</div></div><div class="p">99 kr.</div></div>
-<div class="item"><div><div class="serif t">HUSETS LEMONADE</div><div>Citron og basilikum</div></div><div class="p">25 kr.</div></div>
-<div class="item"><div><div class="serif t">COOKIE</div><div>Brunet smør, mørk chokolade, flagesalt</div></div><div class="p">35 kr.</div></div>
-<div class="item"><div><div class="serif t">WHIPPED RICOTTA</div><div>Pisket ricotta, basilikumolie</div></div><div class="p">15 kr.</div></div><p class="small">Pizzaerne indeholder hvede (gluten) og mælk. Piggy og Hot One indeholder svinekød. Kontakt os om allergener.</p>
-</div>
-
-<div class="wrap">
-<h2 class="serif">Sådan henter du din pizza</h2>
+<div class="section-kicker">BESTILLING</div>
+<h2 class="serif">Sådan fungerer det</h2>
 <div class="steps">
-<div><div class="serif n">1</div><div><strong>Bestil et tidsrum</strong></div><div>Vælg dag og tid. Vi bager få pizzaer ad gangen, så de første tider går hurtigt.</div></div>
-<div><div class="serif n">2</div><div><strong>Betal og få adressen</strong></div><div>Du får en mail med betaling og præcist afhentningstidspunkt. Adressen oplyses separat.</div></div>
-<div><div class="serif n">3</div><div><strong>Hent og spis</strong></div><div>Pizzaen kommer varm i kassen. Spis den inden for 15 minutter.</div></div>
+<div><div class="serif n">1</div><div><strong>Vælg afhentningstidspunkt</strong></div><div>Vælg dit afhentningstidspunkt. Vi bager i små hold, så der er et begrænset antal pladser.</div></div>
+<div><div class="serif n">2</div><div><strong>Modtag bekræftelse</strong></div><div>Du får en mail med betalingsinfo og dit tidspunkt. Den præcise adresse får du separat.</div></div>
+<div><div class="serif n">3</div><div><strong>Hent din pizza</strong></div><div>Hent din pizza på det valgte tidspunkt. Vi anbefaler at spise den, mens den er friskbagt.</div></div>
 </div>
 </div>
 
 <div id="bestil" class="box">
-<div class="event-label">Næste pop-up</div>
+<div class="event-label">NÆSTE POP-UP</div>
 <div class="event-date">30 / 01</div>
 <div class="event-meta">Østerbro · 17:00–19:30</div>
 <div class="event-deadline">Bestil senest kl. 12:00 dagen før</div>
@@ -320,10 +407,25 @@ h2.serif,.item .t{
 
 
 <div class="foot">
-<div>Følg med på Instagram: <a href="https://www.instagram.com/gastrokokken/" target="_blank" rel="noopener">@gastrokokken</a></div>
-<div>STRETCH er et lille pizzaprojekt på Østerbro.</div>
+<div>Instagram: <a href="https://www.instagram.com/gastrokokken/" target="_blank" rel="noopener">@gastrokokken</a></div>
+<div><strong>DISCO PIZZA</strong> · Napolitansk pizza på Østerbro.</div>
 </div>
 
 
+<script>
+(function () {
+  const cfg = window.DISCO_CONFIG || {ordersOpen:false, openingText:'Bestillingen er endnu ikke åben.'};
+  if (!cfg.ordersOpen) {
+    document.querySelectorAll('.order-link').forEach(link => {
+      link.textContent = 'Se menu';
+      link.href = '#menu';
+    });
+    const event = document.querySelector('.event-deadline');
+    if (event) event.textContent = cfg.openingText || 'Bestillingen er endnu ikke åben.';
+    const box = document.querySelector('#bestil .event-label');
+    if (box) box.textContent = 'NÆSTE POP-UP · BESTILLING ÅBNER SNART';
+  }
+})();
+</script>
 </body>
 </html>
